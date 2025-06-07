@@ -1,0 +1,66 @@
+{
+	"name": "@dan-livingston/color",
+	"version": "0.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dan-livingston/color"
+	},
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": ">=18"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./constants": {
+			"types": "./dist/constants/index.d.ts",
+			"import": "./dist/constants/index.js",
+			"require": "./dist/constants/constants.cjs"
+		},
+		"./hex": {
+			"types": "./dist/hex.d.ts",
+			"import": "./dist/hex.js",
+			"require": "./dist/hex.cjs"
+		},
+		"./rgb": {
+			"types": "./dist/rgb.d.ts",
+			"import": "./dist/rgb.js",
+			"require": "./dist/rgb.cjs"
+		}
+	},
+	"scripts": {
+		"build": "tsc && vite build",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"check": "tsc --noEmit",
+		"test": "vitest --run",
+		"changeset": "changeset",
+		"changeset:version": "changeset version && git add --all",
+		"changeset:release": "changeset publish",
+		"prepublishOnly": "npm run build"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.29.4",
+		"@eslint/compat": "^1.2.9",
+		"@eslint/js": "^9.28.0",
+		"@types/node": "^22.15.30",
+		"eslint": "^9.28.0",
+		"eslint-config-prettier": "^10.1.5",
+		"globals": "^16.2.0",
+		"prettier": "^3.5.3",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.33.1",
+		"vite": "^6.3.5",
+		"vite-plugin-dts": "^4.5.4",
+		"vitest": "^3.2.2"
+	}
+}

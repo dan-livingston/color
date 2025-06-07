@@ -1,0 +1,23 @@
+name: "\U0001F41E Bug report"
+description: Report an issue with this package
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Describe the bug
+      placeholder: Bug description
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - annoyance
+        - serious
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional information

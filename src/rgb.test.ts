@@ -1,0 +1,26 @@
+import { describe, expect, it } from 'vitest';
+import { rgb } from './rgb';
+import * as Color from './constants';
+
+const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+
+describe('rgb', () => {
+	it('initializes a color from a valid rgb', () => {
+		for (const color of colors) {
+			expect(() => rgb(color.r, color.g, color.b)).not.toThrow();
+		}
+	});
+
+	it("doesn't initialize a color from an invalid rgb", () => {
+		expect(() => rgb(-1, 0, 0)).toThrow();
+		expect(() => rgb(256, 0, 0)).toThrow();
+		expect(() => rgb(0.5, 0, 0)).toThrow();
+	});
+
+	it('converts from rgb to hex correctly', () => {
+		for (const color of colors) {
+			expect(rgb(color.r, color.g, color.b).rawHex).toBe(color.rawHex);
+			expect(rgb(color.r, color.g, color.b).hex).toBe(color.hex);
+		}
+	});
+});
