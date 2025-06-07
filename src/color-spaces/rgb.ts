@@ -1,5 +1,5 @@
 import type { Color } from '../types';
-import { formatHex } from '../utils';
+import { brand, formatHex } from '../utils';
 
 export function rgb(r: number, g: number, b: number): Color {
 	if (
@@ -17,12 +17,12 @@ export function rgb(r: number, g: number, b: number): Color {
 
 	const rawHex = (r << 16) + (g << 8) + b;
 
-	return {
+	return brand({
 		rawHex,
 		hex: formatHex(rawHex),
 		rgb: { r, g, b },
 		r,
 		g,
 		b
-	};
+	});
 }
