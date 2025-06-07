@@ -1,5 +1,5 @@
 import type { Color, HexString, Rgb } from '../types';
-import { formatHex } from '../utils';
+import { brand, formatHex } from '../utils';
 
 export function hex(value: HexString): Color;
 export function hex(value: number): Color;
@@ -28,14 +28,14 @@ function parseHex(hex: number): Color {
 
 	const { r, g, b } = hexToRgb(hex);
 
-	return {
+	return brand({
 		rawHex: hex,
 		hex: formatHex(hex),
 		rgb: { r, g, b },
 		r,
 		g,
 		b
-	};
+	});
 }
 
 function parseShortHexString(value: HexString): Color {

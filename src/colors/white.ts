@@ -1,6 +1,7 @@
 import type { Color } from '../types';
+import { brand as brand } from '../utils';
 
-export const WHITE: Color = {
+export const WHITE: Color = brand({
 	rawHex: 0xffffff,
 	hex: '#ffffff',
 	r: 255,
@@ -11,4 +12,4 @@ export const WHITE: Color = {
 		g: 255,
 		b: 255
 	}
-};
+});
