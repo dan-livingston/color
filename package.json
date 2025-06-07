@@ -21,20 +21,10 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./constants": {
-			"types": "./dist/constants/index.d.ts",
-			"import": "./dist/constants/index.js",
-			"require": "./dist/constants/constants.cjs"
-		},
-		"./hex": {
-			"types": "./dist/hex.d.ts",
-			"import": "./dist/hex.js",
-			"require": "./dist/hex.cjs"
-		},
-		"./rgb": {
-			"types": "./dist/rgb.d.ts",
-			"import": "./dist/rgb.js",
-			"require": "./dist/rgb.cjs"
+		"./colors": {
+			"types": "./dist/colors/index.d.ts",
+			"import": "./dist/colors/index.js",
+			"require": "./dist/colors/colors.cjs"
 		}
 	},
 	"scripts": {

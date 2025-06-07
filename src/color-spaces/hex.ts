@@ -1,5 +1,5 @@
-import type { Color, HexString, Rgb } from './types';
-import { formatHex } from './utils';
+import type { Color, HexString, Rgb } from '../types';
+import { formatHex } from '../utils';
 
 export function hex(value: HexString): Color;
 export function hex(value: number): Color;

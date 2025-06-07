@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { rgb } from './rgb';
-import * as Color from './constants';
+import * as Color from '../colors';
 
 const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
 

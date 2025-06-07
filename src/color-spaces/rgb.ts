@@ -1,5 +1,5 @@
-import type { Color } from './types';
-import { formatHex } from './utils';
+import type { Color } from '../types';
+import { formatHex } from '../utils';
 
 export function rgb(r: number, g: number, b: number): Color {
 	if (
