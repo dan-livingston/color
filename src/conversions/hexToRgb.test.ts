@@ -7,7 +7,7 @@ const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
 describe('hexToRgb', () => {
 	it('converts hex to rgb', () => {
 		for (const color of colors) {
-			expect(hexToRgb(color.rawHex)).toEqual(color.rgb);
+			expect(hexToRgb(color.hex)).toEqual(color.rgb);
 		}
 	});
 });

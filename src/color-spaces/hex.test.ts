@@ -7,8 +7,8 @@ const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
 describe('hex', () => {
 	it('initializes a color from a valid hex', () => {
 		for (const color of colors) {
-			expect(() => hex(color.rawHex)).not.toThrow();
 			expect(() => hex(color.hex)).not.toThrow();
+			expect(() => hex(color.hexString)).not.toThrow();
 		}
 	});
 

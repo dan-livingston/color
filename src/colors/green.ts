@@ -2,8 +2,7 @@ import type { Color } from '../types';
 import { createColor } from '../utils';
 
 export const GREEN: Color = createColor({
-	rawHex: 0x00ff00,
-	hex: '#00ff00',
+	hex: 0x00ff00,
 	rgb: {
 		r: 0,
 		g: 255,

@@ -2,8 +2,7 @@ import type { Color } from '../types';
 import { createColor } from '../utils';
 
 export const BLUE: Color = createColor({
-	rawHex: 0x0000ff,
-	hex: '#0000ff',
+	hex: 0x0000ff,
 	rgb: {
 		r: 0,
 		g: 0,

@@ -2,8 +2,8 @@ import type { colorSymbol } from './constants';
 
 export interface Color {
 	__colorSymbol: typeof colorSymbol;
-	readonly rawHex: number;
-	readonly hex: HexString;
+	readonly hex: number;
+	readonly hexString: HexString;
 	readonly rgb: Rgb;
 	readonly hsl: Hsl;
 	readonly r: number;
