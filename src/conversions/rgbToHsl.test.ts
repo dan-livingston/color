@@ -6,7 +6,10 @@ describe('rgbToHsl', () => {
 	it('converts rgb to hsl', () => {
 		for (const color of colors) {
 			const { r, g, b } = color.rgb;
-			expect(rgbToHsl(r, g, b)).toEqual(color.hsl);
+			const { h, s, l } = rgbToHsl(r, g, b);
+			expect(h).toBeCloseTo(color.hsl.h, 0);
+			expect(s).toBeCloseTo(color.hsl.s);
+			expect(l).toBeCloseTo(color.hsl.l);
 		}
 	});
 });

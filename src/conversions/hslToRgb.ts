@@ -9,7 +9,7 @@ export function hslToRgb(h: number, s: number, l: number): Rgb {
 
 	function computeRgbPart(n: number) {
 		const k = computeK(n);
-		return Math.ceil(255 * (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1))));
+		return 255 * (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)));
 	}
 
 	return {
