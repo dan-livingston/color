@@ -1,4 +1,5 @@
 import { hexToRgb } from '../conversions/hexToRgb';
+import { hslToHsv } from '../conversions/hslToHsv';
 import { rgbToHsl } from '../conversions/rgbToHsl';
 import type { Color, Hex, HexString } from '../types';
 import { createColor } from '../utils';
@@ -34,7 +35,8 @@ function parseHex(hex: number): Color {
 	return createColor({
 		hex,
 		rgb: { r, g, b },
-		hsl: { h, s, l }
+		hsl: { h, s, l },
+		hsv: hslToHsv(h, s, l)
 	});
 }
 

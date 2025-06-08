@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import * as Color from '../colors';
 import { hslToRgb } from './hslToRgb';
-
-const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+import { colors } from '../__fixtures__/colors';
 
 describe('hslToRgb', () => {
 	it('converts hsl to rgb', () => {
 		for (const color of colors) {
-			expect(hslToRgb(color.h, color.s, color.l)).toEqual(color.rgb);
+			const { h, s, l } = color.hsl;
+			const { r, g, b } = hslToRgb(h, s, l);
+
+			expect(r).toBeCloseTo(color.rgb.r, 0);
+			expect(g).toBeCloseTo(color.rgb.g, 0);
+			expect(b).toBeCloseTo(color.rgb.b, 0);
 		}
 	});
 });

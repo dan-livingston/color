@@ -1,5 +1,5 @@
 import { colorSymbol } from './constants';
-import type { Color, Hsl, Rgb } from './types';
+import type { Color, Hsl, Hsv, Rgb } from './types';
 
 export function isColor(value: unknown): value is Color {
 	return (
@@ -13,15 +13,17 @@ export function isColor(value: unknown): value is Color {
 interface BaseColor {
 	hex: number;
 	hsl: Hsl;
+	hsv: Hsv;
 	rgb: Rgb;
 }
 
-export function createColor(base: BaseColor): Color {
+export function createColor({ hex, hsl, hsv, rgb }: BaseColor): Color {
 	return {
 		__colorSymbol: colorSymbol,
-		...base,
-		...base.rgb,
-		...base.hsl,
-		hexString: `#${base.hex.toString(16).padStart(6, '0')}`
+		hex,
+		hsl,
+		hsv,
+		rgb,
+		hexString: `#${hex.toString(16).padStart(6, '0')}`
 	};
 }

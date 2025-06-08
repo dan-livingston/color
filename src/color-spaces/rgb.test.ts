@@ -1,13 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { rgb } from './rgb';
-import * as Color from '../colors';
-
-const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+import { colors } from '../__fixtures__/colors';
 
 describe('rgb', () => {
 	it('initializes a color from a valid rgb', () => {
 		for (const color of colors) {
-			expect(() => rgb(color.r, color.g, color.b)).not.toThrow();
+			const { r, g, b } = color.rgb;
+			expect(() => rgb(r, g, b)).not.toThrow();
 		}
 	});
 
