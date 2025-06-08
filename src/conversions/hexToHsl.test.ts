@@ -7,7 +7,7 @@ const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
 describe('hexTohsl', () => {
 	it('converts hex to hsl', () => {
 		for (const color of colors) {
-			expect(hexToHsl(color.rawHex)).toEqual(color.hsl);
+			expect(hexToHsl(color.hex)).toEqual(color.hsl);
 		}
 	});
 });

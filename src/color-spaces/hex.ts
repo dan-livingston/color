@@ -1,7 +1,7 @@
 import { hexToRgb } from '../conversions/hexToRgb';
 import { rgbToHsl } from '../conversions/rgbToHsl';
 import type { Color, Hex, HexString } from '../types';
-import { createColor, formatHex } from '../utils';
+import { createColor } from '../utils';
 
 export function hex(value: HexString): Color;
 export function hex(value: number): Color;
@@ -32,8 +32,7 @@ function parseHex(hex: number): Color {
 	const { h, s, l } = rgbToHsl(r, g, b);
 
 	return createColor({
-		rawHex: hex,
-		hex: formatHex(hex),
+		hex,
 		rgb: { r, g, b },
 		hsl: { h, s, l }
 	});

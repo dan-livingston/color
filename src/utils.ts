@@ -1,9 +1,5 @@
 import { colorSymbol } from './constants';
-import type { Color, HexString } from './types';
-
-export function formatHex(hex: number): HexString {
-	return `#${hex.toString(16).padStart(6, '0')}`;
-}
+import type { Color, Hsl, Rgb } from './types';
 
 export function isColor(value: unknown): value is Color {
 	return (
@@ -14,13 +10,18 @@ export function isColor(value: unknown): value is Color {
 	);
 }
 
-export function createColor(
-	base: Omit<Color, '__colorSymbol' | 'r' | 'g' | 'b' | 'h' | 's' | 'l'>
-): Color {
+interface BaseColor {
+	hex: number;
+	hsl: Hsl;
+	rgb: Rgb;
+}
+
+export function createColor(base: BaseColor): Color {
 	return {
+		__colorSymbol: colorSymbol,
 		...base,
 		...base.rgb,
 		...base.hsl,
-		__colorSymbol: colorSymbol
+		hexString: `#${base.hex.toString(16).padStart(6, '0')}`
 	};
 }
