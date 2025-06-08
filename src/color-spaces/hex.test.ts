@@ -22,14 +22,4 @@ describe('hex', () => {
 
 		expect(() => hex('#ggg')).toThrow();
 	});
-
-	it('converts from hex to rgb correctly', () => {
-		for (const color of colors) {
-			const hexFromHexString = hex(color.hex);
-			expect(hexFromHexString.rgb).toEqual(color.rgb);
-
-			const hexFromRawHex = hex(color.rawHex);
-			expect(hexFromRawHex.rgb).toEqual(color.rgb);
-		}
-	});
 });

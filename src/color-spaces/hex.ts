@@ -1,18 +1,20 @@
-import type { Color, HexString, Rgb } from '../types';
-import { brand, formatHex } from '../utils';
+import { hexToRgb } from '../conversions/hexToRgb';
+import { rgbToHsl } from '../conversions/rgbToHsl';
+import type { Color, Hex, HexString } from '../types';
+import { createColor, formatHex } from '../utils';
 
 export function hex(value: HexString): Color;
 export function hex(value: number): Color;
-export function hex(value: unknown): Color {
+export function hex(value: Hex): Color {
 	switch (typeof value) {
 		case 'number':
 			return parseHex(value);
 		case 'string': {
 			switch (value.length) {
 				case 4:
-					return parseShortHexString(value as HexString);
+					return parseShortHexString(value);
 				case 7:
-					return parseLongHexString(value as HexString);
+					return parseLongHexString(value);
 				default:
 					throw new TypeError('Not a valid hex');
 			}
@@ -27,14 +29,13 @@ function parseHex(hex: number): Color {
 		throw new TypeError('Not a valid hex');
 
 	const { r, g, b } = hexToRgb(hex);
+	const { h, s, l } = rgbToHsl(r, g, b);
 
-	return brand({
+	return createColor({
 		rawHex: hex,
 		hex: formatHex(hex),
 		rgb: { r, g, b },
-		r,
-		g,
-		b
+		hsl: { h, s, l }
 	});
 }
 
@@ -44,8 +45,4 @@ function parseShortHexString(value: HexString): Color {
 
 function parseLongHexString(value: HexString): Color {
 	return parseHex(Number.parseInt(value.replace('#', ''), 16));
-}
-
-function hexToRgb(value: number): Rgb {
-	return { r: (value & 0xff0000) >> 16, g: (value & 0x00ff00) >> 8, b: value & 0x0000ff };
 }

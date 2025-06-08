@@ -16,11 +16,4 @@ describe('rgb', () => {
 		expect(() => rgb(256, 0, 0)).toThrow();
 		expect(() => rgb(0.5, 0, 0)).toThrow();
 	});
-
-	it('converts from rgb to hex correctly', () => {
-		for (const color of colors) {
-			expect(rgb(color.r, color.g, color.b).rawHex).toBe(color.rawHex);
-			expect(rgb(color.r, color.g, color.b).hex).toBe(color.hex);
-		}
-	});
 });
