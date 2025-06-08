@@ -1,5 +1,11 @@
 # @dan-livingston/color
 
+## 0.4.0
+
+### Minor Changes
+
+- ee0c2fa: feat: add hsv color space
+
 ## 0.3.1
 
 ### Patch Changes
