@@ -7,12 +7,6 @@ export interface Color {
 	readonly rgb: Rgb;
 	readonly hsl: Hsl;
 	readonly hsv: Hsv;
-	readonly r: number;
-	readonly g: number;
-	readonly b: number;
-	readonly h: number;
-	readonly s: number;
-	readonly l: number;
 }
 
 // Color spaces

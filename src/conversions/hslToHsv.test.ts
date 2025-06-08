@@ -5,7 +5,8 @@ import { colors } from '../__fixtures__/colors';
 describe('hslToHsv', () => {
 	it('converts hsl to hsv', () => {
 		for (const color of colors) {
-			expect(hslToHsv(color.h, color.s, color.l)).toEqual(color.hsv);
+			const { h, s, l } = color.hsl;
+			expect(hslToHsv(h, s, l)).toEqual(color.hsv);
 		}
 	});
 });

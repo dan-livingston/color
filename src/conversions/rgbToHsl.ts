@@ -13,7 +13,7 @@ export function rgbToHsl(r: number, g: number, b: number): Hsl {
 		return {
 			h: 0,
 			s: 0,
-			l: lightness
+			l: Math.round(lightness * 100) / 100
 		};
 	}
 
@@ -26,8 +26,8 @@ export function rgbToHsl(r: number, g: number, b: number): Hsl {
 	if (vMax === blue) hue = (red - green) / difference + 4;
 
 	return {
-		h: (hue * 360) / 6,
-		s: saturation,
-		l: lightness
+		h: Math.round((hue * 360) / 6),
+		s: Math.round(saturation * 100) / 100,
+		l: Math.round(lightness * 100) / 100
 	};
 }

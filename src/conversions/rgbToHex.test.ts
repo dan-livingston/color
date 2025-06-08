@@ -5,7 +5,8 @@ import { colors } from '../__fixtures__/colors';
 describe('rgbToHex', () => {
 	it('converts rgb to Hex', () => {
 		for (const color of colors) {
-			expect(rgbToHex(color.r, color.g, color.b)).toEqual(color.hex);
+			const { r, g, b } = color.rgb;
+			expect(rgbToHex(r, g, b)).toEqual(color.hex);
 		}
 	});
 });

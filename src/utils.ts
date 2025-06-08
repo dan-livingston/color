@@ -17,12 +17,13 @@ interface BaseColor {
 	rgb: Rgb;
 }
 
-export function createColor(base: BaseColor): Color {
+export function createColor({ hex, hsl, hsv, rgb }: BaseColor): Color {
 	return {
 		__colorSymbol: colorSymbol,
-		...base,
-		...base.rgb,
-		...base.hsl,
-		hexString: `#${base.hex.toString(16).padStart(6, '0')}`
+		hex,
+		hsl,
+		hsv,
+		rgb,
+		hexString: `#${hex.toString(16).padStart(6, '0')}`
 	};
 }

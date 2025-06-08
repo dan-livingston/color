@@ -22,5 +22,6 @@ export function set(param1: unknown, param2?: unknown) {
 }
 
 function _set(color: Color, options: SetOptions): Color {
-	return rgb(options.r ?? color.r, options.g ?? color.g, options.b ?? color.b);
+	const { r, g, b } = color.rgb;
+	return rgb(options.r ?? r, options.g ?? g, options.b ?? b);
 }
