@@ -15,7 +15,7 @@ export default defineConfig({
 		lib: {
 			entry: {
 				index: resolve(__dirname, 'src/index.ts'),
-				'colors/index': resolve(__dirname, 'src/colors/index.ts')
+				colors: resolve(__dirname, 'src/colors.ts')
 			},
 			name: 'Color'
 		}
