@@ -1,3 +1,5 @@
+import { hslToHsv } from '../conversions/hslToHsv';
+import { rgbToHex } from '../conversions/rgbToHex';
 import { rgbToHsl } from '../conversions/rgbToHsl';
 import type { Color } from '../types';
 import { createColor } from '../utils';
@@ -16,12 +18,12 @@ export function rgb(r: number, g: number, b: number): Color {
 	)
 		throw new TypeError('Not a valid rgb value');
 
-	const hex = (r << 16) + (g << 8) + b;
 	const { h, s, l } = rgbToHsl(r, g, b);
 
 	return createColor({
-		hex: hex,
+		hex: rgbToHex(r, g, b),
 		rgb: { r, g, b },
-		hsl: { h, s, l }
+		hsl: { h, s, l },
+		hsv: hslToHsv(h, s, l)
 	});
 }
