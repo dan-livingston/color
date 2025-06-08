@@ -1,8 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import * as Color from '../colors';
 import { rgbToHsl } from './rgbToHsl';
-
-const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+import { colors } from '../__fixtures__/colors';
 
 describe('rgbToHsl', () => {
 	it('converts rgb to hsl', () => {

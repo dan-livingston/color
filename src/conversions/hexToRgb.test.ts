@@ -1,8 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import * as Color from '../colors';
 import { hexToRgb } from './hexToRgb';
-
-const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+import { colors } from '../__fixtures__/colors';
 
 describe('hexToRgb', () => {
 	it('converts hex to rgb', () => {

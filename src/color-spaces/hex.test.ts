@@ -1,8 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { hex } from './hex';
-import * as Color from '../colors';
-
-const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+import { colors } from '../__fixtures__/colors';
 
 describe('hex', () => {
 	it('initializes a color from a valid hex', () => {

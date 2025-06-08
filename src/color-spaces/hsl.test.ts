@@ -1,8 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { hsl } from './hsl';
-import * as Color from '../colors';
-
-const colors = [Color.RED, Color.GREEN, Color.BLUE, Color.WHITE, Color.BLACK];
+import { colors } from '../__fixtures__/colors';
 
 describe('hsl', () => {
 	it('initializes a color from a valid hsl', () => {
