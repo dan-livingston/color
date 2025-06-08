@@ -1,5 +1,6 @@
+import { rgbToHsl } from '../conversions/rgbToHsl';
 import type { Color } from '../types';
-import { brand, formatHex } from '../utils';
+import { createColor, formatHex } from '../utils';
 
 export function rgb(r: number, g: number, b: number): Color {
 	if (
@@ -16,13 +17,12 @@ export function rgb(r: number, g: number, b: number): Color {
 		throw new TypeError('Not a valid rgb value');
 
 	const rawHex = (r << 16) + (g << 8) + b;
+	const { h, s, l } = rgbToHsl(r, g, b);
 
-	return brand({
+	return createColor({
 		rawHex,
 		hex: formatHex(rawHex),
 		rgb: { r, g, b },
-		r,
-		g,
-		b
+		hsl: { h, s, l }
 	});
 }
